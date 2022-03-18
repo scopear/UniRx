@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define UniRxLibrary
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UniRx.InternalUtil;
@@ -65,6 +67,21 @@ namespace UniRx
             if (other == null) throw new ArgumentNullException("other");
 
             return new TakeUntilObservable<T, TOther>(source, other);
+        }
+        
+        public static IObservable<TSource> TakeUntil<TSource>(
+            this IObservable<TSource> source, Func<TSource, bool> predicate)
+        {
+            // TODO is there a possible memory leak?
+            return Observable.Create<TSource>(o => source.Subscribe(x =>
+                    {
+                        o.OnNext(x);
+                        if (predicate(x))
+                            o.OnCompleted();
+                    },
+                    o.OnError,
+                    o.OnCompleted
+                ));
         }
 
         public static IObservable<T> TakeLast<T>(this IObservable<T> source, int count)
