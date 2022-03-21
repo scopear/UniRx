@@ -73,15 +73,27 @@ namespace UniRx
             this IObservable<TSource> source, Func<TSource, bool> predicate)
         {
             // TODO is there a possible memory leak?
-            return Observable.Create<TSource>(o => source.Subscribe(x =>
+            SerialDisposable sd = new SerialDisposable();
+            return Observable
+                .Create<TSource>(o => sd.Disposable = source.Subscribe(x =>
                     {
                         o.OnNext(x);
                         if (predicate(x))
+                        {
                             o.OnCompleted();
+                            sd.Dispose();
+                        }
                     },
-                    o.OnError,
-                    o.OnCompleted
-                ));
+                    (error) =>
+                    {
+                        sd.Dispose();
+                        o.OnError(error);
+                    },
+                    () =>
+                    {
+                        sd.Dispose();
+                        o.OnCompleted();
+                    }));
         }
 
         public static IObservable<T> TakeLast<T>(this IObservable<T> source, int count)
