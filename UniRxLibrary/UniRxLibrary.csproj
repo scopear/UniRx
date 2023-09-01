@@ -1,0 +1,1059 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+        <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+        <LangVersion>8</LangVersion>
+        <DefineConstants>UniRxLibrary</DefineConstants>
+    </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>UniRxLibrary;NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461'">
+    <DefineConstants>UniRxLibrary;NETFRAMEWORK</DefineConstants>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\Assets\.DS_Store">
+        <Link>Assets\.DS_Store</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools.meta">
+        <Link>Assets\AssetStoreTools.meta</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor.meta">
+        <Link>Assets\AssetStoreTools\Editor.meta</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\AssetStoreTools.dll">
+        <Link>Assets\AssetStoreTools\Editor\AssetStoreTools.dll</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\AssetStoreTools.dll.meta">
+        <Link>Assets\AssetStoreTools\Editor\AssetStoreTools.dll.meta</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\AssetStoreToolsExtra.dll">
+        <Link>Assets\AssetStoreTools\Editor\AssetStoreToolsExtra.dll</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\AssetStoreToolsExtra.dll.meta">
+        <Link>Assets\AssetStoreTools\Editor\AssetStoreToolsExtra.dll.meta</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\DroidSansMono.ttf">
+        <Link>Assets\AssetStoreTools\Editor\DroidSansMono.ttf</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\DroidSansMono.ttf.meta">
+        <Link>Assets\AssetStoreTools\Editor\DroidSansMono.ttf.meta</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\icon.png">
+        <Link>Assets\AssetStoreTools\Editor\icon.png</Link>
+      </Content>
+      <Content Include="..\Assets\AssetStoreTools\Editor\icon.png.meta">
+        <Link>Assets\AssetStoreTools\Editor\icon.png.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Editor.meta">
+        <Link>Assets\Editor.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Editor\PackageExporter.cs.meta">
+        <Link>Assets\Editor\PackageExporter.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins.meta">
+        <Link>Assets\Plugins.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx.meta">
+        <Link>Assets\Plugins\UniRx.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Examples.meta">
+        <Link>Assets\Plugins\UniRx\Examples.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\ReadMe.txt">
+        <Link>Assets\Plugins\UniRx\ReadMe.txt</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\ReadMe.txt.meta">
+        <Link>Assets\Plugins\UniRx\ReadMe.txt.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts.meta">
+        <Link>Assets\Plugins\UniRx\Scripts.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Asynchronous.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Asynchronous.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Asynchronous\WebRequestExtensions.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Asynchronous\WebRequestExtensions.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\BooleanDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\BooleanDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\CancellationDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\CancellationDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\CompositeDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\CompositeDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\DictionaryDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\DictionaryDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\Disposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\Disposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\DisposableExtensions.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\DisposableExtensions.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\ICancelable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\ICancelable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\MultipleAssignmentDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\MultipleAssignmentDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\RefCountDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\RefCountDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\ScheduledDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\ScheduledDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\SerialDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\SerialDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\SingleAssignmentDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\SingleAssignmentDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Disposables\StableCompositeDisposable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\StableCompositeDisposable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\EventPattern.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\EventPattern.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\AscynLock.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\AscynLock.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\CancellableTaskCompletionSource.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\CancellableTaskCompletionSource.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ExceptionExtensions.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ExceptionExtensions.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ImmutableList.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ImmutableList.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ListObserver.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ListObserver.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\MicroCoroutine.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\MicroCoroutine.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\PriorityQueue.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\PriorityQueue.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\PromiseHelper.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\PromiseHelper.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ScheduledItem.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ScheduledItem.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ThreadSafeQueueWorker.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ThreadSafeQueueWorker.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\UnityEqualityComparer.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\UnityEqualityComparer.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Notification.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Notification.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Notifiers.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\BooleanNotifier.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\BooleanNotifier.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\CountNotifier.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\CountNotifier.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\MessageBroker.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\MessageBroker.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\ScheduledNotifier.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\ScheduledNotifier.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Aggregate.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Aggregate.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Awaiter.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Awaiter.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Binding.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Binding.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Blocking.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Blocking.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Concatenate.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Concatenate.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Concurrency.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Concurrency.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Conversions.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Conversions.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Creation.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Creation.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Events.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Events.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.FromAsync.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.FromAsync.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Joins.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Joins.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Paging.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Paging.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observable.Time.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Time.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Observer.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Observer.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Amb.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Amb.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\AsObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\AsObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\AsSingleUnitObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\AsSingleUnitObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\AsUnitObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\AsUnitObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Buffer.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Buffer.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Cast.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Cast.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Catch.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Catch.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\CombineLatest.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\CombineLatest.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Concat.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Concat.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ContinueWith.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ContinueWith.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Create.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Create.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\DefaultIfEmpty.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\DefaultIfEmpty.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Defer.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Defer.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Delay.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Delay.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\DelaySubscription.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\DelaySubscription.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Dematerialize.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Dematerialize.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Distinct.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Distinct.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\DistinctUntilChanged.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\DistinctUntilChanged.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Do.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Do.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Empty.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Empty.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Finally.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Finally.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\First.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\First.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ForEachAsync.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ForEachAsync.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\FromEvent.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\FromEvent.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\GroupBy.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\GroupBy.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\IgnoreElements.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\IgnoreElements.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Last.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Last.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Materialize.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Materialize.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Merge.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Merge.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Never.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Never.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ObserveOn.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ObserveOn.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\OfType.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\OfType.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\OperatorObservableBase.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\OperatorObservableBase.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\OperatorObserverBase.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\OperatorObserverBase.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\PairWise.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\PairWise.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Range.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Range.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\RefCount.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\RefCount.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Repeat.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Repeat.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\RepeatSafe.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\RepeatSafe.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Return.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Return.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Sample.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Sample.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Scan.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Scan.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Select.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Select.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\SelectMany.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SelectMany.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\SelectWhere.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SelectWhere.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Single.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Single.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Skip.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Skip.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\SkipUntil.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SkipUntil.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\SkipWhile.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SkipWhile.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Start.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Start.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\StartWith.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\StartWith.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\SubscribeOn.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SubscribeOn.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Switch.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Switch.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Synchronize.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Synchronize.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\SynchronizedObserver.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SynchronizedObserver.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Take.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Take.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\TakeLast.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TakeLast.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\TakeUntil.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TakeUntil.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\TakeWhile.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TakeWhile.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Throttle.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Throttle.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ThrottleFirst.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ThrottleFirst.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Throw.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Throw.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\TimeInterval.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TimeInterval.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Timeout.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Timeout.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Timer.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Timer.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Timestamp.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Timestamp.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ToArray.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ToArray.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ToList.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ToList.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ToObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ToObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Wait.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Wait.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\WhenAll.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\WhenAll.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Where.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Where.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\WhereSelect.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\WhereSelect.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\WithLatestFrom.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\WithLatestFrom.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\Zip.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Zip.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Operators\ZipLatest.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ZipLatest.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\package.json">
+        <Link>Assets\Plugins\UniRx\Scripts\package.json</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\package.json.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\package.json.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Pair.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Pair.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Schedulers.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\CurrentThreadScheduler.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\CurrentThreadScheduler.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\ImmediateScheduler.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\ImmediateScheduler.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\IScheduler.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\IScheduler.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\Scheduler.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\Scheduler.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\ThreadPoolScheduler.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\ThreadPoolScheduler.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\AsyncSubject.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\AsyncSubject.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\BehaviorSubject.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\BehaviorSubject.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\ConnectableObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\ConnectableObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\ISubject.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\ISubject.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\ReplaySubject.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\ReplaySubject.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\Subject.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\Subject.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Subjects\SubjectExtensions.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\SubjectExtensions.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System\IObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System\IObserver.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IObserver.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System\IOptimizedObservable.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IOptimizedObservable.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System\IProgress.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IProgress.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System\Tuple.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System\Tuple.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\System\Unit.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\System\Unit.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Tasks.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Tasks.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Tasks\TaskObservableExtensions.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Tasks\TaskObservableExtensions.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\TimeInterval.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\TimeInterval.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\Timestamped.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\Timestamped.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\UniRx.asmdef">
+        <Link>Assets\Plugins\UniRx\Scripts\UniRx.asmdef</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\UniRx.asmdef.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\UniRx.asmdef.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\UnityEngineBridge.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\UnityEngineBridge.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\UnityWinRTBridge.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\UnityWinRTBridge.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\Thread.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\Thread.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\ThreadPoolScheduler_UnityWinRT.cs.meta">
+        <Link>Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\ThreadPoolScheduler_UnityWinRT.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Resources.meta">
+        <Link>Assets\Resources.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Resources\te.txt">
+        <Link>Assets\Resources\te.txt</Link>
+      </Content>
+      <Content Include="..\Assets\Resources\te.txt.meta">
+        <Link>Assets\Resources\te.txt.meta</Link>
+      </Content>
+      <Content Include="..\Assets\RuntimeUnitTestToolkit.meta">
+        <Link>Assets\RuntimeUnitTestToolkit.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts.meta">
+        <Link>Assets\Scripts.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\Editor.meta">
+        <Link>Assets\Scripts\Editor.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\Editor\Tests.meta">
+        <Link>Assets\Scripts\Editor\Tests.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\Sandbox.meta">
+        <Link>Assets\Scripts\Sandbox.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\Sandbox\SandboxScene.cs.meta">
+        <Link>Assets\Scripts\Sandbox\SandboxScene.cs.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\Sandbox\SandboxScene.unity">
+        <Link>Assets\Scripts\Sandbox\SandboxScene.unity</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\Sandbox\SandboxScene.unity.meta">
+        <Link>Assets\Scripts\Sandbox\SandboxScene.unity.meta</Link>
+      </Content>
+      <Content Include="..\Assets\Scripts\UnityTests.meta">
+        <Link>Assets\Scripts\UnityTests.meta</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\Assets\Editor\PackageExporter.cs">
+        <Link>Assets\Editor\PackageExporter.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Asynchronous\WebRequestExtensions.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Asynchronous\WebRequestExtensions.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\BooleanDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\BooleanDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\CancellationDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\CancellationDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\CompositeDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\CompositeDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\DictionaryDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\DictionaryDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\Disposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\Disposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\DisposableExtensions.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\DisposableExtensions.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\ICancelable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\ICancelable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\MultipleAssignmentDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\MultipleAssignmentDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\RefCountDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\RefCountDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\ScheduledDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\ScheduledDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\SerialDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\SerialDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\SingleAssignmentDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\SingleAssignmentDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Disposables\StableCompositeDisposable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Disposables\StableCompositeDisposable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\EventPattern.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\EventPattern.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\AscynLock.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\AscynLock.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\CancellableTaskCompletionSource.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\CancellableTaskCompletionSource.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ExceptionExtensions.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ExceptionExtensions.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ImmutableList.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ImmutableList.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ListObserver.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ListObserver.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\MicroCoroutine.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\MicroCoroutine.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\PriorityQueue.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\PriorityQueue.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\PromiseHelper.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\PromiseHelper.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ScheduledItem.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ScheduledItem.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\InternalUtil\ThreadSafeQueueWorker.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\InternalUtil\ThreadSafeQueueWorker.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Notification.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Notification.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\BooleanNotifier.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\BooleanNotifier.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\CountNotifier.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\CountNotifier.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\MessageBroker.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\MessageBroker.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Notifiers\ScheduledNotifier.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Notifiers\ScheduledNotifier.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Aggregate.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Aggregate.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Awaiter.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Awaiter.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Binding.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Binding.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Blocking.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Blocking.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Concatenate.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Concatenate.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Concurrency.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Concurrency.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Conversions.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Conversions.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Creation.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Creation.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Events.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Events.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.FromAsync.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.FromAsync.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Joins.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Joins.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Paging.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Paging.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observable.Time.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observable.Time.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Observer.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Observer.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Amb.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Amb.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\AsObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\AsObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\AsSingleUnitObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\AsSingleUnitObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\AsUnitObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\AsUnitObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Buffer.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Buffer.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Cast.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Cast.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Catch.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Catch.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\CombineLatest.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\CombineLatest.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Concat.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Concat.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ContinueWith.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ContinueWith.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Create.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Create.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\DefaultIfEmpty.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\DefaultIfEmpty.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Defer.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Defer.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Delay.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Delay.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\DelaySubscription.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\DelaySubscription.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Dematerialize.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Dematerialize.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Distinct.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Distinct.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\DistinctUntilChanged.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\DistinctUntilChanged.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Do.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Do.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Empty.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Empty.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Finally.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Finally.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\First.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\First.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ForEachAsync.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ForEachAsync.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\FromEvent.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\FromEvent.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\GroupBy.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\GroupBy.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\IgnoreElements.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\IgnoreElements.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Last.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Last.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Materialize.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Materialize.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Merge.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Merge.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Never.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Never.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ObserveOn.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ObserveOn.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\OfType.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\OfType.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\OperatorObservableBase.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\OperatorObservableBase.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\OperatorObserverBase.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\OperatorObserverBase.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\PairWise.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\PairWise.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Range.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Range.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\RefCount.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\RefCount.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Repeat.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Repeat.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\RepeatSafe.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\RepeatSafe.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Return.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Return.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Sample.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Sample.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Scan.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Scan.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Select.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Select.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\SelectMany.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SelectMany.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\SelectWhere.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SelectWhere.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Single.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Single.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Skip.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Skip.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\SkipUntil.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SkipUntil.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\SkipWhile.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SkipWhile.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Start.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Start.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\StartWith.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\StartWith.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\SubscribeOn.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SubscribeOn.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Switch.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Switch.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Synchronize.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Synchronize.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\SynchronizedObserver.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\SynchronizedObserver.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Take.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Take.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\TakeLast.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TakeLast.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\TakeUntil.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TakeUntil.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\TakeWhile.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TakeWhile.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Throttle.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Throttle.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ThrottleFirst.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ThrottleFirst.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Throw.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Throw.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\TimeInterval.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\TimeInterval.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Timeout.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Timeout.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Timer.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Timer.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Timestamp.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Timestamp.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ToArray.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ToArray.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ToList.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ToList.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ToObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ToObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Wait.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Wait.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\WhenAll.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\WhenAll.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Where.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Where.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\WhereSelect.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\WhereSelect.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\WithLatestFrom.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\WithLatestFrom.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\Zip.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\Zip.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Operators\ZipLatest.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Operators\ZipLatest.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Pair.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Pair.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\CurrentThreadScheduler.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\CurrentThreadScheduler.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\ImmediateScheduler.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\ImmediateScheduler.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\IScheduler.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\IScheduler.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\Scheduler.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\Scheduler.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Schedulers\ThreadPoolScheduler.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Schedulers\ThreadPoolScheduler.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\AsyncSubject.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\AsyncSubject.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\BehaviorSubject.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\BehaviorSubject.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\ConnectableObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\ConnectableObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\ISubject.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\ISubject.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\ReplaySubject.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\ReplaySubject.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\Subject.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\Subject.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Subjects\SubjectExtensions.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Subjects\SubjectExtensions.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\System\IObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\System\IObserver.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IObserver.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\System\IOptimizedObservable.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IOptimizedObservable.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\System\IProgress.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\System\IProgress.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\System\Tuple.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\System\Tuple.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\System\Unit.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\System\Unit.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Tasks\TaskObservableExtensions.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Tasks\TaskObservableExtensions.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\TimeInterval.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\TimeInterval.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\Timestamped.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\Timestamped.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\Thread.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\Thread.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\ThreadPoolScheduler_UnityWinRT.cs">
+        <Link>Assets\Plugins\UniRx\Scripts\UnityWinRTBridge\ThreadPoolScheduler_UnityWinRT.cs</Link>
+      </Compile>
+      <Compile Include="..\Assets\Scripts\Sandbox\SandboxScene.cs">
+        <Link>Assets\Scripts\Sandbox\SandboxScene.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="..\Assets\Scripts\Editor\Tests">
+        <Link>Assets\Scripts\Editor\Tests</Link>
+      </Folder>
+    </ItemGroup>
+
+</Project>

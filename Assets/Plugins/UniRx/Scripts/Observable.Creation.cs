@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UniRx.Operators;
 
 namespace UniRx
@@ -10,6 +11,13 @@ namespace UniRx
         /// Create anonymous observable. Observer has exception durability. This is recommended for make operator and event like generator. 
         /// </summary>
         public static IObservable<T> Create<T>(Func<IObserver<T>, IDisposable> subscribe)
+        {
+            if (subscribe == null) throw new ArgumentNullException("subscribe");
+
+            return new CreateObservable<T>(subscribe);
+        }
+        
+        public static IObservable<T> Create<T>(Func<IObserver<T>, Task<IDisposable>> subscribe)
         {
             if (subscribe == null) throw new ArgumentNullException("subscribe");
 
