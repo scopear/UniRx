@@ -1,0 +1,17 @@
+<Project>
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <LangVersion>8</LangVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Nullable>annotations</Nullable>
+    <Deterministic>true</Deterministic>
+    <DebugType>embedded</DebugType>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+</Project>
